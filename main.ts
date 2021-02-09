@@ -1,5 +1,18 @@
+function playCode (text: string) {
+    for (let index = 0; index <= text.length; index++) {
+        chr = text.charAt(index)
+        if (chr == ".") {
+            music.playTone(262, music.beat(BeatFraction.Eighth))
+        }
+        if (chr == ".") {
+            music.playTone(262, music.beat(BeatFraction.Half))
+        }
+        basic.pause(100)
+    }
+}
 input.onButtonPressed(Button.A, function () {
     basic.showString(code)
+    playCode(code)
     basic.showString("" + (alphabet[morse.indexOf(code)]))
     Cword = "" + Cword + code
     Word = "" + Word + alphabet[morse.indexOf(code)]
@@ -13,6 +26,7 @@ input.onButtonPressed(Button.AB, function () {
     Word = ""
 })
 let timed = 0
+let chr = ""
 let alphabet: string[] = []
 let morse: string[] = []
 let code = ""
@@ -31,11 +45,13 @@ basic.forever(function () {
     }
     if (timed < 10 && timed > 0) {
         basic.showString(".")
+        music.playTone(262, music.beat(BeatFraction.Eighth))
         code = "" + code + "."
     }
     if (timed > 10 && timed > 0) {
         basic.showString("-")
         code = "" + code + "-"
+        music.playTone(262, music.beat(BeatFraction.Half))
     }
     basic.pause(10)
     basic.showLeds(`
