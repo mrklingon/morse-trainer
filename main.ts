@@ -4,7 +4,7 @@ function playCode (text: string) {
         if (chr == ".") {
             music.playTone(523, music.beat(BeatFraction.Eighth))
         }
-        if (chr == ".") {
+        if (chr == "-") {
             music.playTone(131, music.beat(BeatFraction.Half))
         }
         basic.pause(100)
