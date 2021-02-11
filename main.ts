@@ -41,7 +41,7 @@ basic.forever(function () {
     timed = 0
     while (input.buttonIsPressed(Button.B)) {
         timed += 1
-        basic.pause(40)
+        basic.pause(30)
     }
     if (timed < 10 && timed > 0) {
         basic.showString(".")
