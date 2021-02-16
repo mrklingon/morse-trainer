@@ -41,14 +41,14 @@ basic.forever(function () {
     timed = 0
     while (input.buttonIsPressed(Button.B)) {
         timed += 1
-        basic.pause(30)
+        basic.pause(25)
     }
-    if (timed < 15 && timed > 0) {
+    if (timed < 33 && timed > 0) {
         basic.showString(".")
         music.playTone(523, music.beat(BeatFraction.Eighth))
         code = "" + code + "."
     }
-    if (timed > 15 && timed > 0) {
+    if (timed > 33 && timed > 0) {
         basic.showString("-")
         code = "" + code + "-"
         music.playTone(131, music.beat(BeatFraction.Half))
