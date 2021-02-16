@@ -43,12 +43,12 @@ basic.forever(function () {
         timed += 1
         basic.pause(30)
     }
-    if (timed < 10 && timed > 0) {
+    if (timed < 15 && timed > 0) {
         basic.showString(".")
         music.playTone(523, music.beat(BeatFraction.Eighth))
         code = "" + code + "."
     }
-    if (timed > 10 && timed > 0) {
+    if (timed > 15 && timed > 0) {
         basic.showString("-")
         code = "" + code + "-"
         music.playTone(131, music.beat(BeatFraction.Half))
