@@ -14,7 +14,7 @@ input.onButtonPressed(Button.A, function () {
     basic.showString(code)
     playCode(code)
     basic.showString("" + (alphabet[morse.indexOf(code)]))
-    Cword = "" + Cword + code
+    Cword = "" + Cword + code + "  "
     Word = "" + Word + alphabet[morse.indexOf(code)]
     code = ""
 })
@@ -24,6 +24,11 @@ input.onButtonPressed(Button.AB, function () {
     basic.showString(Word)
     Cword = ""
     Word = ""
+})
+input.onGesture(Gesture.Shake, function () {
+    Word = ""
+    Cword = ""
+    code = ""
 })
 let timed = 0
 let chr = ""
